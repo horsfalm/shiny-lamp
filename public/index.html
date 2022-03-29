@@ -46,4 +46,14 @@
   <!-- add idb script -->
   <script src="js/idb.js"></script>
 </body>
+<!-- check serviceworker -->
+<script>
+  (function () {
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./service-worker.js')
+        .then(() => console.log(`Successfully loaded service-worker.js`))
+        .catch(err => console.log(`Failed to load service-worker.js`, err));
+    }
+  })();
+</script>
 </html>
