@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const compression = require("compression");
 
 const PORT = process.env.PORT || 3001;
-const MONGODB_URI = `mongodb+srv://horsfalm:${process.env.MPASS}@cluster0.hbk5f.mongodb.net/${process.env.MDB}?retryWrites=true&w=majority` || "mongodb://localhost/budget";
+mongoose.connect(process.env.MONGODB_URI) || "mongodb://localhost/budget";
 
 const app = express();
 
